@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import { useMousePosition } from "util/mouse";
 
 interface ParticlesProps {
@@ -26,23 +26,24 @@ export default function Particles({
 	const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 	const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
-  const initCanvas = useCallback(() => {
+  
+	useEffect(() => {
+	if (canvasRef.current) {
+		context.current = canvasRef.current.getContext("2d");
+	}
+	initCanvas();
+	animate();
+	window.addEventListener("resize", initCanvas);
+
+	return () => {
+		window.removeEventListener("resize", initCanvas);
+	};
+}, [initCanvas, animate]);
+	
+	const initCanvas = useCallback(() => {
                 resizeCanvas();
                 drawParticles();
         }, [resizeCanvas, drawParticles]);
-				
-	useEffect(() => {
-    if (canvasRef.current) {
-      context.current = canvasRef.current.getContext("2d");
-    }
-    initCanvas();
-    animate();
-    window.addEventListener("resize", initCanvas);
-
-    return () => {
-      window.removeEventListener("resize", initCanvas);
-    };
-  }, [initCanvas, animate]);
 
 	useEffect(() => {
 		onMouseMove();
