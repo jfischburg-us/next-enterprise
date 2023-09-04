@@ -18,7 +18,7 @@ export default function Web() {
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
-        <title>Next.js Enterprise Boilerplate</title>
+        <title>trAIdemark: AI Value Creation Agency</title>
       </Head>
       <section className="bg-oscillate w-screen h-screen flex items-center justify-center relative overflow-hidden">
         <Particles />
