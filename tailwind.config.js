@@ -29,6 +29,11 @@ module.exports = {
           800: "#1e40af",
           900: "#1e3a8a",
         },
+        traidmark: {
+          black: "#25231c",
+          blue: "#596ba4",
+          mustard: "#ab9716",
+        },
       },
       fontFamily: {
         body: [
