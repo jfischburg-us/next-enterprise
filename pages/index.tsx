@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Particles } from "components/Particles/Particles"
+import Particles from "components/Particles/Particles"
 import { LP_GRID_ITEMS } from "../lp-items"
 
 export default function Web() {
