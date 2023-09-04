@@ -28,3 +28,7 @@ export default function Web() {
     </>
   )
 }
+<audio src="/theme1.mp3" controls preload="auto" controlsList="nodownload">
+  Your browser does not support the
+  <code>audio</code> element.
+</audio>
