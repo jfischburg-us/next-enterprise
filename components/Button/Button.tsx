@@ -12,7 +12,7 @@ const button = cva(
     "border",
     "border-blue-400",
     "transition-colors",
-    "delay-50",
+    "transition-delay-50",
   ],
   {
     variants: {
@@ -21,8 +21,8 @@ const button = cva(
         secondary: ["bg-transparent", "text-blue-400", "hover:enabled:bg-blue-400", "hover:enabled:text-white"],
       },
       size: {
-        sm: ["min-w-20", "h-full", "min-h-10", "text-sm", "py-1.5", "px-4"],
-        lg: ["min-w-32", "h-full", "min-h-12", "text-lg", "py-2.5", "px-6"],
+        sm: ["w-20", "h-full", "h-10", "text-sm", "py-1.5", "px-4"],
+        lg: ["w-32", "h-full", "h-12", "text-lg", "py-2.5", "px-6"],
       },
       underline: { true: ["underline"], false: [] },
     },
