@@ -6,7 +6,7 @@ const HamburgerMenu = ({ onMenuToggle }: { onMenuToggle: () => void }) => {
   const [activeMenu, setActiveMenu] = useState(null);
 
   useEffect(() => {
-    const handleEsc = (event) => {
+    const handleEsc = (event: KeyboardEvent) => {
       if (event.keyCode === 27) setIsOpen(false);
     };
     window.addEventListener('keydown', handleEsc);
