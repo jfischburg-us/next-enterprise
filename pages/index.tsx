@@ -1,6 +1,6 @@
 import Head from "next/head"
 import Particles from "components/Particles/Particles"
-import SupernovaLogo from "components/SupernovaLogo"
+import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
 
 export default function Web() {
   return (
