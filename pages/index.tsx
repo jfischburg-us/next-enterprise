@@ -1,9 +1,12 @@
+import React, { useState } from 'react';
 import Head from "next/head"
 import Particles from "components/Particles/Particles"
 import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
 import HamburgerMenu from "components/HamburgerMenu/HamburgerMenu"
 
 export default function Web() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <>
       <Head>
@@ -19,8 +22,8 @@ export default function Web() {
       </Head>
       <section className="bg-oscillate w-screen h-screen flex items-center justify-center relative overflow-hidden">
         <Particles />
-        <SupernovaLogo />
-        <HamburgerMenu />
+        {!isMenuOpen && <SupernovaLogo />}
+        <HamburgerMenu onMenuToggle={setIsMenuOpen} />
       </section>
     </>
   )

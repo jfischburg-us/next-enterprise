@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({ onMenuToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
@@ -14,6 +14,10 @@ const HamburgerMenu = () => {
       window.removeEventListener('keydown', handleEsc);
     };
   }, []);
+
+  useEffect(() => {
+    onMenuToggle(isOpen);
+  }, [isOpen]);
 
   return (
     <div className="fixed top-0 right-0 p-6 z-50">
