@@ -28,15 +28,15 @@ const HamburgerMenu = ({ onMenuToggle }) => {
       </button>
       {isOpen && (
         <div className="fixed inset-0 bg-black opacity-50" onClick={() => setIsOpen(false)}>
-          <ul className="fixed top-0 right-0 p-6 list-none text-white text-2xl">
-            <li onClick={() => setActiveMenu('services')}>Services</li>
+          <ul className="fixed top-0 right-0 p-6 list-none text-white text-2xl w-full flex flex-col items-center">
+            <li onClick={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}>Services</li>
             {activeMenu === 'services' && (
               <ul className="list-none text-white text-xl">
                 <li>AI Consulting</li>
                 <li>Guru Sessions</li>
               </ul>
             )}
-            <li onClick={() => setActiveMenu('industries')}>Industries</li>
+            <li onClick={() => setActiveMenu(activeMenu === 'industries' ? null : 'industries')}>Industries</li>
             {activeMenu === 'industries' && (
               <ul className="list-none text-white text-xl">
                 <li>Retail/CPG</li>
@@ -46,7 +46,7 @@ const HamburgerMenu = ({ onMenuToggle }) => {
                 <li>Software/SaaS</li>
               </ul>
             )}
-            <li onClick={() => setActiveMenu('about')}>About</li>
+            <li onClick={() => setActiveMenu(activeMenu === 'about' ? null : 'about')}>About</li>
             {activeMenu === 'about' && (
               <ul className="list-none text-white text-xl">
                 <li>Team</li>
@@ -54,7 +54,7 @@ const HamburgerMenu = ({ onMenuToggle }) => {
                 <li>Press</li>
               </ul>
             )}
-            <li onClick={() => setActiveMenu('resources')}>Resources</li>
+            <li onClick={() => setActiveMenu(activeMenu === 'resources' ? null : 'resources')}>Resources</li>
             {activeMenu === 'resources' && (
               <ul className="list-none text-white text-xl">
                 <li>Blog</li>
@@ -62,7 +62,7 @@ const HamburgerMenu = ({ onMenuToggle }) => {
                 <li>Webinars</li>
               </ul>
             )}
-            <li onClick={() => setActiveMenu('contact')}>Contact</li>
+            <li onClick={() => setActiveMenu(activeMenu === 'contact' ? null : 'contact')}>Contact</li>
             {activeMenu === 'contact' && (
               <ul className="list-none text-white text-xl">
                 <li>Inquire</li>
