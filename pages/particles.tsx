@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import Particles from "../components/Particles/Particles";
+import { useMousePosition } from "../util/mouse";
 
 const navigation = [
 	{ name: "Projects", href: "/projects" },
