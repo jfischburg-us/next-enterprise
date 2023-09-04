@@ -24,9 +24,48 @@ const HamburgerMenu = () => {
       {isOpen && (
         <div className="fixed inset-0 bg-black opacity-50" onClick={() => setIsOpen(false)}>
           <ul className="fixed top-0 right-0 p-6 list-none text-white text-2xl">
-            <li>Placeholder 1</li>
-            <li>Placeholder 2</li>
-            <li>Placeholder 3</li>
+            <li onClick={() => setActiveMenu('services')}>Services</li>
+            {activeMenu === 'services' && (
+              <ul className="list-none text-white text-xl">
+                <li>AI Consulting</li>
+                <li>Guru Sessions</li>
+              </ul>
+            )}
+            <li onClick={() => setActiveMenu('industries')}>Industries</li>
+            {activeMenu === 'industries' && (
+              <ul className="list-none text-white text-xl">
+                <li>Retail/CPG</li>
+                <li>Government</li>
+                <li>Healthcare</li>
+                <li>Biotech</li>
+                <li>Software/SaaS</li>
+              </ul>
+            )}
+            <li onClick={() => setActiveMenu('about')}>About</li>
+            {activeMenu === 'about' && (
+              <ul className="list-none text-white text-xl">
+                <li>Team</li>
+                <li>Partnership</li>
+                <li>Press</li>
+              </ul>
+            )}
+            <li onClick={() => setActiveMenu('resources')}>Resources</li>
+            {activeMenu === 'resources' && (
+              <ul className="list-none text-white text-xl">
+                <li>Blog</li>
+                <li>eBooks</li>
+                <li>Webinars</li>
+              </ul>
+            )}
+            <li onClick={() => setActiveMenu('contact')}>Contact</li>
+            {activeMenu === 'contact' && (
+              <ul className="list-none text-white text-xl">
+                <li>Inquire</li>
+                <li>Book</li>
+              </ul>
+            )}
+            <li>Press</li>
+            <li>Investors</li>
           </ul>
         </div>
       )}
