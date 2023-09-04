@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 const HamburgerMenu = ({ onMenuToggle }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,11 +30,17 @@ const HamburgerMenu = ({ onMenuToggle }) => {
       {isOpen && (
         <div className="fixed inset-0 bg-black opacity-50" onClick={() => setIsOpen(false)}>
           <ul className="fixed top-0 right-0 p-6 list-none text-white text-2xl w-full flex flex-col items-center">
-            <li onClick={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}>Services</li>
+            <li onClick={() => setActiveMenu(activeMenu === 'services' ? null : 'services')}>
+              <Link href="/services">Services</Link>
+            </li>
             {activeMenu === 'services' && (
               <ul className="list-none text-white text-xl">
-                <li>AI Consulting</li>
-                <li>Guru Sessions</li>
+                <li>
+                  <Link href="/ai-consulting">AI Consulting</Link>
+                </li>
+                <li>
+                  <Link href="/guru-sessions">Guru Sessions</Link>
+                </li>
               </ul>
             )}
             <li onClick={() => setActiveMenu(activeMenu === 'industries' ? null : 'industries')}>Industries</li>
