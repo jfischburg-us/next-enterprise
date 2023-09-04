@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from "next/head"
 import Particles from "components/Particles/Particles"
 import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
