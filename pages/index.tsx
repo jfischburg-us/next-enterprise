@@ -3,14 +3,27 @@ import Head from "next/head"
 import Particles from "components/Particles/Particles"
 import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
 import HamburgerMenu from "components/HamburgerMenu/HamburgerMenu"
+import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
 
 export default function Web() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const togglePlay = () => {
+    const audioElement = document.getElementById('background-audio') as HTMLAudioElement;
+    if (isPlaying) {
+      audioElement.pause();
+    } else {
+      audioElement.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
 
   useEffect(() => {
     const audioElement = document.getElementById('background-audio') as HTMLAudioElement;
     const playAudio = () => {
       audioElement.play();
+      setIsPlaying(true);
       document.removeEventListener('click', playAudio);
     };
 
@@ -42,6 +55,9 @@ export default function Web() {
         Your browser does not support the
         <code>audio</code> element.
       </audio>
+      <button onClick={togglePlay} className="fixed bottom-4 right-4 z-50">
+        {isPlaying ? <FaPauseCircle size={48} color="white" /> : <FaPlayCircle size={48} color="white" />}
+      </button>
     </>
   )
 }
