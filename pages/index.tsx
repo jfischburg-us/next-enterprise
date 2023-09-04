@@ -17,7 +17,7 @@ export default function Web() {
         <meta name="twitter:card" content="summary_large_image" />
         <title>Next.js Enterprise Boilerplate</title>
       </Head>
-      <section className="bg-traidmark-black dark:bg-gray-900 w-screen h-screen flex items-center justify-center relative">
+      <section className="bg-oscillate w-screen h-screen flex items-center justify-center relative">
         <Particles />
         <SupernovaLogo />
         <HamburgerMenu />
