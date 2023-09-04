@@ -13,3 +13,9 @@
 .bg-oscillate {
   animation: oscillate 10s infinite;
 }
+
+@media (orientation: portrait) {
+  .font-inter {
+    font-size: calc(6vw + 1em);
+  }
+}
