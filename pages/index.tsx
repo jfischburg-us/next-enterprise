@@ -1,6 +1,7 @@
 import Head from "next/head"
 import Particles from "components/Particles/Particles"
 import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
+import HamburgerMenu from "components/HamburgerMenu/HamburgerMenu"
 
 export default function Web() {
   return (
