@@ -27,26 +27,26 @@ export default function Particles({
 	const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
 
-	useEffect(() => {
-		if (canvasRef.current) {
-			context.current = canvasRef.current.getContext("2d");
-		}
-		initCanvas();
-		animate();
-		window.addEventListener("resize", initCanvas);
+  useEffect(() => {
+    if (canvasRef.current) {
+      context.current = canvasRef.current.getContext("2d");
+    }
+    initCanvas();
+    animate();
+    window.addEventListener("resize", initCanvas);
 
-		return () => {
-			window.removeEventListener("resize", initCanvas);
-		};
-	}, []);
+    return () => {
+      window.removeEventListener("resize", initCanvas);
+    };
+  }, [initCanvas, animate]);
 
 	useEffect(() => {
 		onMouseMove();
-	}, [mousePosition.x, mousePosition.y]);
+	}, [mousePosition.x, mousePosition.y, onMouseMove]);
 
 	useEffect(() => {
 		initCanvas();
-	}, [refresh]);
+	}, [refresh, initCanvas]);
 
 	const initCanvas = () => {
 		resizeCanvas();
