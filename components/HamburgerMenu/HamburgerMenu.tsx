@@ -18,7 +18,7 @@ const HamburgerMenu = ({ onMenuToggle }: { onMenuToggle: (isOpen: boolean) => vo
 
   useEffect(() => {
     onMenuToggle(isOpen);
-  }, [isOpen]);
+  }, [isOpen, onMenuToggle]);
 
   return (
     <div className="fixed top-0 right-0 p-6 z-50">
