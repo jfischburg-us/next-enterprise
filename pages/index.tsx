@@ -51,7 +51,7 @@ export default function Web() {
         {!isMenuOpen && <SupernovaLogo />}
         <HamburgerMenu onMenuToggle={setIsMenuOpen} />
       </section>
-      <audio id="background-audio" src="/theme1.mp3" controls preload="auto" controlsList="nodownload">
+      <audio id="background-audio" src="/theme1.mp3" controls preload="auto" controlsList="nodownload" loop>
         Your browser does not support the
         <code>audio</code> element.
       </audio>
