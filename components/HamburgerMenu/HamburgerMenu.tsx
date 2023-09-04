@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 
-const HamburgerMenu = ({ onMenuToggle }) => {
+const HamburgerMenu = ({ onMenuToggle }: { onMenuToggle: () => void }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 

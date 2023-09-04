@@ -7,10 +7,11 @@ module.exports = {
     "prettier",
     "react-app",
     "react-app/jest",
-    "plugin:@typescript-eslint/recommended",
     "plugin:storybook/recommended",
     "plugin:tailwindcss/recommended",
   ],
+  parser: "@typescript-eslint/parser",
+  plugins: ["@typescript-eslint"],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve("next/babel")],
