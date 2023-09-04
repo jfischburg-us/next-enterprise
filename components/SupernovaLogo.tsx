@@ -9,7 +9,7 @@ const SupernovaLogo = () => {
 
   return (
     <svg ref={logoRef} className="logo">
-      {/* TODO: Add SVG path for "trAIdmark" text */}
+      <text x="0" y="45" fill="white">trAIdmark</text>
     </svg>
   );
 };
