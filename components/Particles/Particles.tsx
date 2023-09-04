@@ -26,7 +26,12 @@ export default function Particles({
 	const mouse = useRef<{ x: number; y: number }>({ x: 0, y: 0 });
 	const canvasSize = useRef<{ w: number; h: number }>({ w: 0, h: 0 });
 	const dpr = typeof window !== "undefined" ? window.devicePixelRatio : 1;
-  useEffect(() => {
+  const initCanvas = useCallback(() => {
+                resizeCanvas();
+                drawParticles();
+        }, [resizeCanvas, drawParticles]);
+				
+	useEffect(() => {
     if (canvasRef.current) {
       context.current = canvasRef.current.getContext("2d");
     }
@@ -46,11 +51,6 @@ export default function Particles({
 	useEffect(() => {
 		initCanvas();
 	}, [refresh, initCanvas]);
-
-  const initCanvas = useCallback(() => {
-                resizeCanvas();
-                drawParticles();
-        }, [resizeCanvas, drawParticles]);
 
         const onMouseMove = useCallback(() => {
                 if (canvasRef.current) {
