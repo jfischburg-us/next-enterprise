@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 const HamburgerMenu = ({ onMenuToggle }: { onMenuToggle: (isOpen: boolean) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
+  const [activeMenu, setActiveMenu] = useState<string | null>(null);
 
   useEffect(() => {
     const handleEsc = (event: KeyboardEvent) => {
