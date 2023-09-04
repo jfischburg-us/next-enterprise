@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(null);
 
   useEffect(() => {
     const handleEsc = (event) => {
