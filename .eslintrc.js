@@ -11,7 +11,6 @@ module.exports = {
     "plugin:tailwindcss/recommended",
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint"],
   parserOptions: {
     babelOptions: {
       presets: [require.resolve("next/babel")],

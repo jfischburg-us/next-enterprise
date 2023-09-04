@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
 import Head from "next/head"
+import React, { useEffect, useState } from 'react';
+import { FaPauseCircle, FaPlayCircle } from 'react-icons/fa';
 import Particles from "components/Particles/Particles"
-import SupernovaLogo from "components/SupernovaLogo/SupernovaLogo"
-import HamburgerMenu from "components/HamburgerMenu/HamburgerMenu"
-import { FaPlayCircle, FaPauseCircle } from 'react-icons/fa';
+import HamburgerMenu from "../components/HamburgerMenu/HamburgerMenu"
+import SupernovaLogo from "../components/SupernovaLogo/SupernovaLogo"
 
 export default function Web() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
