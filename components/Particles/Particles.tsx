@@ -16,7 +16,7 @@ export default function Particles({
 	quantity = 100,
 	staticity = 25,
 	ease = 25,
-	refresh = true,
+	refresh = false,
 }: ParticlesProps) {
 	const canvasRef = useRef<HTMLCanvasElement>(null);
 	const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -226,9 +226,9 @@ export default function Particles({
 		window.requestAnimationFrame(animate);
 	};
 
-	return (
-		<div className={className + " z-0"} ref={canvasContainerRef} aria-hidden="true">
-			<canvas ref={canvasRef} />
-		</div>
-	);
+    return (
+        <div className={className + " z-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"} ref={canvasContainerRef} aria-hidden="true">
+            <canvas ref={canvasRef} />
+        </div>
+    );
 }
