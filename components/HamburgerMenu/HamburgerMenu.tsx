@@ -1,7 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const HamburgerMenu = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    const handleEsc = (event) => {
+      if (event.keyCode === 27) setIsOpen(false);
+    };
+    window.addEventListener('keydown', handleEsc);
+
+    return () => {
+      window.removeEventListener('keydown', handleEsc);
+    };
+  }, []);
 
   return (
     <div className="fixed top-0 right-0 p-6 z-50">
@@ -11,7 +22,7 @@ const HamburgerMenu = () => {
         <div className="w-8 h-1 bg-white transition-transform duration-200 ease-in-out transform origin-center" style={{transform: isOpen ? 'rotate(-45deg)' : 'rotate(0)'}}></div>
       </button>
       {isOpen && (
-        <div className="fixed inset-0 bg-black opacity-50">
+        <div className="fixed inset-0 bg-black opacity-50" onClick={() => setIsOpen(false)}>
           <ul className="fixed top-0 right-0 p-6 list-none text-white text-2xl">
             <li>Placeholder 1</li>
             <li>Placeholder 2</li>
