@@ -33,7 +33,7 @@ export default function Web() {
   )
 
   useEffect(() => {
-    const audioElement = document.getElementById('background-audio');
+    const audioElement = document.getElementById('background-audio') as HTMLAudioElement;
     const playAudio = () => {
       audioElement.play();
       document.removeEventListener('click', playAudio);
