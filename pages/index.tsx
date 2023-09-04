@@ -1,5 +1,5 @@
 import Head from "next/head"
-import { Button } from "components/Button/Button"
+import { Particles } from "components/Particles/Particles"
 import { LP_GRID_ITEMS } from "../lp-items"
 
 export default function Web() {
@@ -17,16 +17,7 @@ export default function Web() {
         <title>Next.js Enterprise Boilerplate</title>
       </Head>
       <section className="bg-traidmark-black dark:bg-gray-900">
-        <div className="mx-auto grid max-w-screen-xl px-4 py-8 text-center lg:py-16">
-          <div className="mx-auto place-self-center">
-            <h1 className="mb-4 max-w-2xl text-4xl font-extrabold leading-none tracking-tight text-traidmark-blue md:text-5xl xl:text-6xl">
-              trAIdmark
-            </h1>
-            <p className="mb-6 max-w-2xl font-light text-traidmark-mustard dark:text-gray-400 md:text-lg lg:mb-8 lg:text-xl">
-              Welcome to trAIdmark. We are currently under construction. Stay tuned for updates.
-            </p>
-          </div>
-        </div>
+        <Particles />
       </section>
       <section className="bg-white dark:bg-gray-900">
         <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-16 lg:px-6">
