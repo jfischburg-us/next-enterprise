@@ -74,6 +74,9 @@ module.exports = {
       minWidth: {
         ...defaultTheme.width,
       },
+      'boxShadow': {},
+      'text2xs': {},
+      'fontOpenSans': {}
     },
   },
   plugins: [],
