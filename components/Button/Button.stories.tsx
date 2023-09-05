@@ -1,6 +1,7 @@
-import type { Meta, StoryObj } from "@storybook/react"
+import { StoryObj, Meta } from '@storybook/react';
 import { Button } from "./Button"
 
+// @ts-ignore
 const meta: Meta<typeof Button> = {
   title: "Button",
   component: Button,

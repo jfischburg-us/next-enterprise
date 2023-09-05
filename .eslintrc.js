@@ -1,31 +1,29 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const fs = require("fs")
+const fs = require('fs');
 
 module.exports = {
   extends: [
-    "next",
-    "prettier",
-    "react-app",
-    "react-app/jest",
-    "plugin:storybook/recommended",
-    "plugin:tailwindcss/recommended",
+    'next',
+    'prettier',
+    'react-app',
+    'react-app/jest',
+    'plugin:storybook/recommended',
+    'plugin:tailwindcss/recommended',
   ],
-  parser: "@typescript-eslint/parser",
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    babelOptions: {
-      presets: [require.resolve("next/babel")],
-    },
+    ecmaVersion: 2019, // Or a higher version if needed
   },
   rules: {
     // ... other rules
   },
   overrides: [
     {
-      files: ["**/*.{js,jsx,ts,tsx}"],
-      plugins: ["prettier"],
+      files: ['**/*.{js,jsx,ts,tsx}'],
+      plugins: ['prettier'],
       rules: {
-        "prettier/prettier": [
-          "error",
+        'prettier/prettier': [
+          'error',
           {},
           {
             usePrettierrc: true,
@@ -38,4 +36,11 @@ module.exports = {
       },
     },
   ],
-}
+  plugins: ['prettier'],
+  settings: {
+    // Set ESLint to recognize the plugin as an ES module
+    node: {
+      tryExtensions: ['.js', '.jsx', '.ts', '.tsx', '.mjs'],
+    },
+  },
+};

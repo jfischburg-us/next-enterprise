@@ -16,6 +16,8 @@ build
 # misc
 .DS_Store
 *.pem
+dist/
+
 
 # debug
 npm-debug.log*
@@ -31,4 +33,4 @@ yarn-error.log*
 /test-results/
 /playwright-report/
 /playwright/.cache/
-.aider*
+*.aider*
