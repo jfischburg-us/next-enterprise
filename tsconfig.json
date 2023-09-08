@@ -17,11 +17,9 @@
     "jsx": "preserve",
     "incremental": true,
     "baseUrl": ".",
-    "types": ["twind", "jest", "@testing-library/jest-dom", "@storybook/nextjs"],
     "experimentalDecorators": false,
     "emitDecoratorMetadata": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.mjs"],
   "exclude": ["node_modules"],
-  "parser": "@typescript-eslint/parser" // Add this line to specify the parser
 }
